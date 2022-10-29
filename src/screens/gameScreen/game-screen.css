@@ -1,0 +1,72 @@
+:root {
+    --progress-range-color: black;
+    --progress-fill-color: red;
+}
+
+#game-screen[active] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-screen game-controls {
+    flex-direction: column;
+}
+
+#controls > * {
+    flex: 1;
+}
+
+#game-screen .progress {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 16px;
+    border: 1px solid var(--text-main);
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#game-screen .progress>.fill {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    background: var(--progress-range-color);
+}
+
+#game-screen .progress>.fill[name=time] {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    background: var(--progress-fill-color);
+}
+
+#game-screen .form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#game-screen .form button {
+    display: inline-block;
+    margin: 0;
+}
+
+#game-screen auto-complete {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#game-screen .result:hover {
+    cursor: pointer;
+}

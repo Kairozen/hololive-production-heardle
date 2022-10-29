@@ -1,0 +1,19 @@
+{
+  "name": "hololive-production-heardle",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite --open --host",
+    "build": "vite build --mode production",
+    "test": "eslint src",
+    "lint": "eslint --fix src"
+  },
+  "dependencies": {
+    "lodash.uniqby": "^4.7.0",
+    "playpass": "^1.15.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "vite": "^2.8.0"
+  }
+}

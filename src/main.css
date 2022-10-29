@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+@import url('/src/vars.css');
+
+
+/* dice game looks nicest with some padding around the edges */
+
+body {
+    padding: 0 1em;
+    font-family: 'Work Sans', sans-serif;
+}
+
+game-header .button {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+game-header .button:hover {
+    opacity: .5;
+}
+
+game-header .button img {
+    filter: var(--text-main-filter);
+}
+
+game-header .button img,
+game-header .button svg {
+    height: 100%;
+}
+
+game-header *[slot=brand] {
+    display: flex;
+    gap: .5em;
+    margin: 0;
+    justify-content: center;
+    color: var(--text-main);
+}
+
+game-header *[slot=brand] img {
+    filter: var(--text-main-filter);
+}
+
+/* prefer center text alignment in our game design */
+
+screen-router>* {
+    text-align: center;
+}
+
+.splash h1 {
+    padding: 8px;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    line-height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    filter: var(--text-main-filter);
+}
+
+audio-ext {
+    display: none;
+    width: 100%;
+    height: calc(100vw * 9 / 16);
+    max-width: 600px;
+    max-height: calc(600px * 9 / 16);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+}
+
+audio-ext iframe {
+    width: 100%;
+    height: 100%;
+}
+
+screen-router[open="#results-screen"] audio-ext {
+    display: block;
+}
+
+body[mode="free"] *[mode]:not([mode="free"]),
+body[mode="free-hard"] *[mode]:not([mode="free"]),
+body[mode="timed"] *[mode]:not([mode="timed"]),
+body[type="audio"] *[game-type]:not([game-type="audio"]),
+body[type="text"] *[game-type]:not([game-type="text"])
+{
+    display: none !important;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: .8em;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    flex-grow: 1;
+}
+
+.results .result {
+    display: block;
+    border: 1px solid var(--text-main);
+    padding: 8px;
+    line-height: 1.2em;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    text-align: left;
+    opacity: 1.0;
+}
+
+.results .result[s] {
+    opacity: 0.6;
+}
+.results .result:not([s]) ~ .result:not([s]) {
+    opacity: 0.2;
+}
+
+.results .result::before {
+    content: '';
+    background-image: url(https://icons.getbootstrap.com/assets/icons/square.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: .5em;
+    width: 1em;
+    height: 1em;
+    vertical-align: -.1em;
+    filter: var(--text-main-filter);
+}
+
+.results .result[s="c"]::before {
+    background-image: url(https://icons.getbootstrap.com/assets/icons/x-square-fill.svg);
+}
+
+.results .result[s="b"]::before {
+    background-image: url(https://icons.getbootstrap.com/assets/icons/check-square-fill.svg);
+}
+
+.results .result[s="_"]::before {
+    background-image: url(https://icons.getbootstrap.com/assets/icons/slash-square.svg);
+}
+
+.lds-ring div {
+    border-color: var(--brand-color) transparent transparent transparent;
+}
+
+.modal .modal-body {
+    color: var(--text-main);
+}
+
+.modal .modal-body {
+    background: var(--background-body);
+    border: inset 1px rgba(255,255,255,0.7);
+    text-align: center;
+}
