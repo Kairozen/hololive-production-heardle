@@ -42,6 +42,16 @@ export default {
             this.store.winStreak = 0;
         }
 
+        if(JSON.parse(localStorage.getItem("debug")) == true)
+        {
+            let debugDiv = document.getElementById("debugField");
+            let today = new Date().toISOString().slice(0, 10);
+            let debugDate = localStorage.getItem("debugDate");
+            debugDiv.innerHTML = '<input type="date" id="debugDate" value="' + (debugDate ?? today) + '" />';
+            let debugField = document.getElementById("debugDate");
+            debugField.addEventListener('change', ()=>{ console.log(debugField.value); localStorage.setItem("debugDate", debugField.value); });
+        }
+
         this.store.lastPlayed = this.store.currentInterval;
 
         this.setMode(this.gameMode);
@@ -75,7 +85,6 @@ export default {
         var currentHint = hints[this.guesses.length];
         currentHint.begin += this.correctAnswer.startTime;
         currentHint.end += this.correctAnswer.startTime;
-        console.log(currentHint);
         return (currentHint);
     },
     submit(currentGuess) {

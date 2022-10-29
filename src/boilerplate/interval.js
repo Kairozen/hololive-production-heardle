@@ -33,6 +33,13 @@ export class IntervalModel extends Model {
     }
 
     get current() {
+        var debug = localStorage.getItem("debug");
+        var debugDate = localStorage.getItem("debugDate");
+        if(JSON.parse(debug) == true && debugDate)
+        {
+            let parsedDate = Date.parse(debugDate);
+            return this._interval.current(parsedDate);
+        }
         return this._interval.current(Date.now());
     }
 
