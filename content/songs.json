@@ -1173,7 +1173,7 @@
             {
             "src": "2CxhOJtdW3k",
             "type": "youtube",
-            "name": "Hoihoi☆Gensou Holoism / ホイホイ☆幻想ホロイズム / Houshou Marine with Holoism Fantasy / 宝鐘マリン with ホロイズムファンタジー",
+            "name": "Hoihoi☆Gensou Holoism / ホイホイ☆幻想ホロイズム - Houshou Marine with Holoism Fantasy / 宝鐘マリン with ホロイズムファンタジー",
             "startTime": 1
             },
             {
@@ -1786,9 +1786,72 @@
             "type": "youtube",
             "name": "uni-birth - Minato Aqua / 湊あくあ",
             "startTime": 0
+            },
+            {
+            "src": "BYTP2oLr59Q",
+            "type": "youtube",
+            "name": "Akutan no koto Suki Sugi☆Song / あくたんのこと好きすぎ☆ソング - Minato Aqua / 湊あくあ",
+            "startTime": 1
+            },
+            {
+            "src": "JaTS4xhV7b8",
+            "type": "youtube",
+            "name": "equal - AZKi",
+            "startTime": 1
+            },
+            {
+            "src": "sL2QMmSlRyU",
+            "type": "youtube",
+            "name": "Happy Fever! Hololive / ハッピー☆フィーバー！ホロライブ - Ookami Mio, Sakura Miko, Oozora Subaru / 大神ミオ, さくらみこ, 大空スバル",
+            "startTime": 0.5
+            },
+            {
+            "src": "r1ZVPTCOCSQ",
+            "type": "youtube",
+            "name": "Shakunetsu nite Junjou(wii-wii-woo) / 灼熱にて純情(wii-wii-woo) - Hoshimachi Suisei / 星街すいせい",
+            "startTime": 0
             }
     ],
     "challenge": [
-
+        {
+            "number": 2,
+            "name": "Kapuine Addiction / Kapuine Chuudoku / かぷうぃん中毒 - Yozora Mel / 夜空メル"
+        },
+        {
+            "number": 10,
+            "name": "Mantra Hujan - Kobo Kanaeru / こぼ・かなえる"
+        },
+        {
+            "number": 11,
+            "name": "Ouroboros - Mori Calliope / 森カリオペ"
+        },
+        {
+            "number": 13,
+            "name": "W.I.M. - Arurandeisu / アルランディス"
+        },
+        {
+            "number": 17,
+            "name": "Fleur - Yukihana Lamy / 雪花ラミィ"
+        },
+        {
+            "number": 26,
+            "name": "ours - Shirogane Noel / 白銀ノエル"
+        },
+        {
+            "number": 33,
+            "name": "Kaisou Ressha / 海想列車 - Minato Aqua / 湊あくあ"
+        },
+        {
+            "number": 40,
+            "name": "Acacia Syndrome / アカシア・シンドローム - Murasaki Shion / 紫咲シオン"
+        },
+        {
+            "number": 42,
+            "name": "hololive ondo / ホロメン音頭 - hololive IDOL PROJECT"
+        },
+        {
+            "number": 45,
+            "name": "Hozukibiyori / 鬼灯日和 - AyaFubuMi / いろはにほへっと あやふぶみ"
+        }
     ]
 }
