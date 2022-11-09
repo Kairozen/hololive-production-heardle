@@ -42,6 +42,7 @@ export default {
             this.store.winStreak = 0;
         }
 
+        //####### DEBUG ONLY #########
         if(JSON.parse(localStorage.getItem("debug")) == true)
         {
             let debugDiv = document.getElementById("debugField");
@@ -50,8 +51,26 @@ export default {
             debugDiv.innerHTML = '<input type="date" id="debugDate" value="' + (debugDate ?? today) + '" />';
             let debugField = document.getElementById("debugDate");
             debugField.addEventListener('change', ()=>{ console.log(debugField.value); localStorage.setItem("debugDate", debugField.value); });
+            
+            for(let i = 0; i < 366; i++)
+            {
+                let sd = new Date(startDate);
+                let dateres = sd.setDate(sd.getDate() + i);
+                const today = challenge.find(({number}) => number === i);
+                let answer;
+                if (today) {
+                    const song = songs.find((s) => s.name === today.name);
+                    answer = Object.assign({}, song ?? {}, today ?? songs[0]);
+                } else {
+                    let interv = Daily(dateres);
+                    let st = new State("daily", new UserModel(MAX_ATTEMPTS), new DailyModel(interv));
+                    answer = songs[st.getModel('interval').randomInt() % songs.length];
+                }
+                console.log(answer.name);
+            }
         }
-
+        //####### ############## #########
+        
         this.store.lastPlayed = this.store.currentInterval;
 
         this.setMode(this.gameMode);
