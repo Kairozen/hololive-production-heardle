@@ -70,6 +70,8 @@ export default class AudioExtElement extends HTMLElement {
             events: {
                 onReady: () => {
                     this.duration = player.getDuration();
+                    let volumeSlider = document.getElementsByName("volume-slider")[0];
+                    volumeSlider.value = player.isMuted() ? 0 : player.getVolume();
                     cb();
                 },
                 onStateChange: (e) => {
@@ -111,6 +113,19 @@ export default class AudioExtElement extends HTMLElement {
         this.stop = () => {
             player.destroy();
         };
+
+        this.getVolume = () => {
+            return player.getVolume();
+        }
+
+        this.isMuted = () => {
+            return player.isMuted();
+        }
+
+        this.setVolume = (volume) => {
+            player.unMute();
+            player.setVolume(volume);
+        }
 
         this.reset = (range = { begin: 0.0, end: 1.0 }) => {
             player.pauseVideo();

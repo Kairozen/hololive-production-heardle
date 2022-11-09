@@ -22,7 +22,7 @@ const nowLabel = template.querySelector('span[name=now]');
 const durationLabel = template.querySelector('span[name=duration]');
 const guessInput = template.querySelector("auto-complete");
 const submitButton = template.querySelector("game-controls form button[name=submit]");
-
+let volumeSlider = template.querySelector('input[name=volume-slider]');
 let puzzleStarted = false;
 
 guessInput.choices = [
@@ -76,6 +76,11 @@ template.querySelector("game-controls form").onsubmit = event => {
         updatePlayingScreen();
     }
 };
+
+volumeSlider.addEventListener("change", (e) => {
+    var volume = e.target.value;
+    player.setVolume(volume);
+});
 
 const playSong = () => {
     player.play();
